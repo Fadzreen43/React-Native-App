@@ -1,0 +1,13 @@
+diff a/App.js b/App.js	(rejected hunks)
+@@ -29,7 +29,10 @@
+       keyExtrator={(item) => item.id}
+       data={people}
+       renderItem={({item})=> (
+-      <Text style={styles.item}>{item.name}</Text>
++        //Touchnable funtion
++        <TouchableOpacity  onPress={() => pressHandler(item.id)}>
++          <Text style={styles.item}>{item.name}</Text>
++        </TouchableOpacity>
+       )}
+       />
+ 
