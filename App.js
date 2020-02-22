@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 
 export default function App() {
  const [people, setPeople] = useState([
@@ -12,6 +12,14 @@ export default function App() {
    {name:'bowser', id:'7'},
  ]);
 
+ // function when u press the text
+ const pressHandler =(id) => {
+   console.log(id);
+   setPeople((prevPeople) => {
+     return prevPeople.filter(person => person.id != id);
+   });
+ }
+
  return(
    <View style={styles.container}>
     
@@ -21,7 +29,10 @@ export default function App() {
       keyExtrator={(item) => item.id}
       data={people}
       renderItem={({item})=> (
-      <Text style={styles.item}>{item.name}</Text>
+        //Touchnable funtion
+        <TouchableOpacity  onPress={() => pressHandler(item.id)}>
+          <Text style={styles.item}>{item.name}</Text>
+        </TouchableOpacity>
       )}
       />
 
