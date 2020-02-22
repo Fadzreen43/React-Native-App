@@ -8,6 +8,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      
+      {/* START INPUT SECTION */}
       <Text>Enter name:</Text>
       <TextInput 
         multiline
@@ -21,11 +23,15 @@ export default function App() {
         style={styles.input}  
         placeholder='e.g. 99'
         onChangeText={(val) => setAge(val)}/>
+      {/* END INPUT SECTION */}
+
+      {/* OUTPUT SECTION */}
         <Text>name: {name} , age: {age}</Text>
     </View>
   );
 }
 
+// STYLE (CSS SECTION)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
